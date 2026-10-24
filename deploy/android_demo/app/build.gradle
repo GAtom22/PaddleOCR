@@ -17,6 +17,9 @@ android {
                 arguments '-DANDROID_PLATFORM=android-23', '-DANDROID_STL=c++_shared' ,"-DANDROID_ARM_NEON=TRUE"
             }
         }
+        ndk {
+            abiFilters "arm64-v8a"  // Ensure x86 is not required
+        }
     }
     buildTypes {
         release {
@@ -30,6 +33,7 @@ android {
             version "3.10.2"
         }
     }
+    ndkVersion '21.1.6352462'
 }
 
 dependencies {
